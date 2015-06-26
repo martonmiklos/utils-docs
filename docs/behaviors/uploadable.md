@@ -46,14 +46,14 @@ The empty array of `avatar` will contain the configurations
 ### Fields
 The `fields` configuration contains an array with avaliable columns you want to set:
 
-- `directory` - this is the column who will contain the directory to your file.
-- `type` - this column will contain the type of the uplaoded file.
-- `size` - this column contains the size of the uploaded file.
-- `fileName` - this column contains the name of the file.
-- `filePath` - this column contains the path to the file, including the file name.
-
-Note that all of the fields will be default set to false, so not used. Only the `directory` field will be automatically set to the name of your given field.
-So in the previous example it would be set to `avatar`.
+- `directory` - this is the column who will contain the path to your file, without the file-name in it. For example:
+`uploads\blogs\4\`
+- `type` - this column will contain the type of the uploaded file. For example: `image/png`.
+- `size` - this column contains the size of the uploaded file. For example: `72896` (kb).
+- `fileName` - this column contains the name of the file. For example: `myFile.png`.
+- `filePath` - this column contains the path to the file, including the file name. For example: 
+`uploads\blogs\4\myFile.png`. This column is automatically used for the given column to upload. In our example above, in
+the column `avatar` the string `uploads\blogs\4\myFile.png` is saved automatically.
 
 Example:
 
@@ -64,7 +64,7 @@ Example:
             'type' => 'avatar_type',
             'size' => 'avatar_size',
             'fileName' => 'avatar_name',
-            'filePath' => 'avatar_path'
+            'filePath' => 'avatar'
           ]
         ],
     ]);
@@ -74,7 +74,7 @@ In this case:
 - the type will be stored in the column `avatar_type`,
 - the size of the file will be stored in the column `avatar_size`,
 - the fileName will be stored in the column `avatar_name`,
-- the filePath (including the file name) will be stored in the column `avatar_path`,
+- the filePath (including the file name) will be stored in the column `avatar`,
 
 ### Remove File On Update
 
@@ -190,4 +190,3 @@ The following features will be added soon:
 - Delete files on delete of entity
 - Delete files on update of entity
 - Validation methods
-- Tests
