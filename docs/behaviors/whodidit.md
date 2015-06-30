@@ -82,4 +82,21 @@ You are able to change the propertynames via this code:
 
 In this case the user who created the item is accessible via `$data->created_by_custom->id`, and not via `$data->created_by->id`.
 The `created_by` key will contain the original column-value, so that will be the users id.
-This example is for the `modified_by` too. 
+This example is for the `modified_by` too.
+ 
+### Auto Contain
+
+By default the `CreatedBy` and `ModifiedBy` relations are contained automatically in your queries. You can unset them
+with:
+
+    public function initialize(array $config) {
+        // code
+        $this->addBehavior('CakeManager.WhoDidIt', [
+            'contain' => false,
+        ]);
+    }
+    
+From now on you can contain the relations when ever you want with:
+
+    $query->contain(['CreatedBy', 'ModifiedBy']);
+    
