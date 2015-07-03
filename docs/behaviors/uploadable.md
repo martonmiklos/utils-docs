@@ -92,8 +92,6 @@ Example:
 
 > Note: When the uploaded file has the same name (and extension) as the previous file, it will be overridden.
 
-> Note: This feature is not implemented properly yet!
-
 ### Remove File On Delete
 
 The `removeFileOnDelete` configuration is a boolean you can set if you want to remove all files when delete the linked entity.
@@ -107,8 +105,6 @@ Example:
         ],
       ]
     ]);
-    
-> Note: This feature is not implemented properly yet!
 
 ### Path
 
@@ -187,6 +183,4 @@ To Do
 
 The following features will be added soon:
 
-- Delete files on delete of entity
-- Delete files on update of entity
 - Validation methods
