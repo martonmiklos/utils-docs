@@ -56,14 +56,21 @@ The second parameter is an array of settings.
 
 - id            - You can add an id to your item. This can be usefull for controlling the item, like editing, or deleting it's item.
 - url           - Adding an url is just like CakePHP: adding an array or string.
-- parent        - Not supported yet... This can be used for adding items under items.
+- parent        - This can be used for adding items under items.
 - title         - The title can also be set via this setting. This is needed when you use the first parameter as ID.
 - weight        - This is a value to order your items. If you add a specific item after another, but give it a lower integer (weight is default `10`), it will be sorted above the other item.
 - icon          - Sometimes you want to add icons (like font-awesome). You can add icons via this setting.
 - area          - Changing the area can also via this setting.
 - active        - This setting is default set to false; and will automatically be set to true if the given url is equal to the current url. The helpers will be able to read this and react on it.
 
-Note: Sub-items (adding a parent) is not supported yet...
+### Adding children
+You can easily add an item by using the `parent` option:
+    
+    $this->Menu->add('Logout', [
+        'parent' => 'User'
+    ]);
+
+This example will add the 'Logout' button as child of the 'User' button.
 
 ### Removing items
 You can remove items using it's id:
@@ -141,10 +148,14 @@ the interface this way:
          */
         protected $_defaultConfig = [];
     
+        public function afterItem($menu = [], $options = []) { return ''; }
+        
         public function afterMenu($menu = [], $options = []) { return ''; }
         
         public function afterSubItem($item = [], $options = []) { return ''; }
     
+        public function beforeItem($menu = [], $options = []) { return ''; }
+        
         public function beforeMenu($menu = [], $options = []) { return ''; }
     
         public function beforeSubItem($item = [], $options = []) { return ''; }
@@ -161,6 +172,12 @@ Used to start a menu.
 
 ### item
 An item itself.
+
+### beforeItem
+Used to start an item.
+
+### afterItem
+Used to end an item.
 
 ### subItem
 An subItem itself.
