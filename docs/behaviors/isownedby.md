@@ -35,7 +35,7 @@ IsOwndBy-method
 
 Via the method `IsOwnedBy` you can validate if the entity belongs to an user. Look at this example:
 
-    if($this->Articles($this->Articles->get(1), $user)) {
+    if($this->Articles->isOwnedBy($this->Articles->get(1), $user)) {
         // The article is owned by the user ($user)
     } else {
         // The article isn't owned by the user ($user)
