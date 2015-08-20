@@ -61,6 +61,7 @@ Example:
         'avatar' => [
           'fields' => [
             'directory' => 'avatar_directory',
+            'url' => 'avatar_url',
             'type' => 'avatar_type',
             'size' => 'avatar_size',
             'fileName' => 'avatar_name',
@@ -71,6 +72,7 @@ Example:
 
 In this case:
 - the directory will be stored in the `avatar_directory` column,
+- the url will be stored in the column `avatar_url`,
 - the type will be stored in the column `avatar_type`,
 - the size of the file will be stored in the column `avatar_size`,
 - the fileName will be stored in the column `avatar_name`,
