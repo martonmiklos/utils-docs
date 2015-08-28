@@ -47,7 +47,8 @@ The empty array of `avatar` will contain the configurations
 The `fields` configuration contains an array with avaliable columns you want to set:
 
 - `directory` - this is the column who will contain the path to your file, without the file-name in it. For example:
-`uploads\blogs\4\`
+`uploads\blogs\4\`.
+- `url` - this column will contain the url (without base) like: `uploads/blogs/4/myFile.png`.
 - `type` - this column will contain the type of the uploaded file. For example: `image/png`.
 - `size` - this column contains the size of the uploaded file. For example: `72896` (kb).
 - `fileName` - this column contains the name of the file. For example: `myFile.png`.
