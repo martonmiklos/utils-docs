@@ -2,18 +2,19 @@ Docs
 ====
 
 This repository contains the documentation for the [Utils Plugin](http://github.com/cakemanager/cakephp-utils).
+The documentation is presented on our [website](http://cakemanager.org/docs/utils/1.0/).
 
 Support
 -------
 
-To get support about the documentation, please use the [issues](https://github.com/cakemanager/cakephp-utils/issues) 
-section of this repository.
+To get support about the documentation, please use the [issues](https://github.com/cakemanager/utils-docs/issues) 
+section of this repository. Note issues for the Utils plugin itself should be issued at the [original repository]( https://github.com/cakemanager/cakephp-utils/issues).
 
 Contributing
 ------------
 
 If you have a good idea for a new feature, feel free to pull or open a new 
-[issue](https://github.com/cakemanager/cakephp-utils/issues). 
+[issue](https://github.com/cakemanager/utils-docs/issues). 
 Pull requests are always more than welcome. [Here](http://cakemanager.org) 
 you can read more about contributing to the documentation.
 
