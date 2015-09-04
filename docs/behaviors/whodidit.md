@@ -40,8 +40,8 @@ The behavior will automatically get the user-data of the user who created and mo
 
     $data = $this->Model->get(1);
         
-    echo $data->created_by->id;     // echo's the user-id of the user who created the entity
-    echo $data->modified_by->email; // echo's the email of the user who modified the entity
+    echo $data->createdBy->id;     // echo's the user-id of the user who created the entity
+    echo $data->modifiedBy->email; // echo's the email of the user who modified the entity
 
 ### Changing the Model
 Maybe are you using another Model instead of the default Model (`CakeManager,Users`).
@@ -69,18 +69,18 @@ The example above will only return the users `id`, `role_id` and `email`.
 
 ### Changing the propertyNames
 
-At default the CreatedBy-data will be overruled on the `created_by` key. That means that it's possible you are getting errors when saving an entity.
+At default the CreatedBy-data will be stored under the `createdBy` key. In case you will override the `created_by` property there is a change you will get errors, because an entity can not be converted to an integer (which the `created_by`-column usually is).
 You are able to change the propertynames via this code:
 
     public function initialize(array $config) {
         // code
         $this->addBehavior('CakeManager.WhoDidIt', [
-            'createdByPropertyName' => 'created_by_custom',
-            'modifiedByPropertyName' => 'modified_by_custom',
+            'createdByPropertyName' => 'createdBy_custom',
+            'modifiedByPropertyName' => 'modifiedBy_custom',
         ]);
     }
 
-In this case the user who created the item is accessible via `$data->created_by_custom->id`, and not via `$data->created_by->id`.
+In this case the user who created the item is accessible via `$data->createdBy_custom->id`, and not via `$data->createdBy->id`.
 The `created_by` key will contain the original column-value, so that will be the users id.
 This example is for the `modified_by` too.
  
