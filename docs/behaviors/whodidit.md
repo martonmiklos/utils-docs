@@ -25,7 +25,7 @@ You can change the fields in the config of your behavior:
 
     public function initialize(array $config) {
         // code
-        $this->addBehavior('CakeManager.WhoDidIt', [
+        $this->addBehavior('Utils.WhoDidIt', [
             'created_by' => 'user_id',      // now the field 'user_id' will contain the user-id when created
             'modified_by' => false,         // the user who will modifie the post won't be registered
         ]);
@@ -44,12 +44,12 @@ The behavior will automatically get the user-data of the user who created and mo
     echo $data->modifiedBy->email; // echo's the email of the user who modified the entity
 
 ### Changing the Model
-Maybe are you using another Model instead of the default Model (`CakeManager,Users`).
+Maybe are you using another Model instead of the default Model (`Users`).
 You can change the model in the config of your behavior:
 
     public function initialize(array $config) {
         // code
-        $this->addBehavior('CakeManager.WhoDidIt', [
+        $this->addBehavior('Utils.WhoDidIt', [
             'userModel' => 'my_custom_model',
         ]);
     }
@@ -60,7 +60,7 @@ Sometimes you don't need every data of the user, it makes your queries much bigg
 
     public function initialize(array $config) {
         // code
-        $this->addBehavior('CakeManager.WhoDidIt', [
+        $this->addBehavior('Utils.WhoDidIt', [
             'fields' => ['id', 'role_id', 'email'],
         ]);
     }
@@ -74,7 +74,7 @@ You are able to change the propertynames via this code:
 
     public function initialize(array $config) {
         // code
-        $this->addBehavior('CakeManager.WhoDidIt', [
+        $this->addBehavior('Utils.WhoDidIt', [
             'createdByPropertyName' => 'createdBy_custom',
             'modifiedByPropertyName' => 'modifiedBy_custom',
         ]);
@@ -91,7 +91,7 @@ with:
 
     public function initialize(array $config) {
         // code
-        $this->addBehavior('CakeManager.WhoDidIt', [
+        $this->addBehavior('Utils.WhoDidIt', [
             'contain' => false,
         ]);
     }
